@@ -592,8 +592,8 @@ class DeviceData:
     # MRS
     def __json_rpc_op_stats(self, ops):
         ops_dict = {
-            'ops': ops[0],
-            'trans': ops[1],
+            'operations': ops[0],
+            'transmissions': ops[1],
             'timeouts': ops[2],
             'bytes_sent': ops[3],
             'bytes_recv': ops[4],
