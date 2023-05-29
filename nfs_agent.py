@@ -24,7 +24,6 @@ while True:
     try:
         
         for mount in mounts:
-            print(mount)
             proc = subprocess.Popen(["nfs-iostat", "jsonstats", mount], stdout=subprocess.PIPE)
             output, error = proc.communicate()
 
