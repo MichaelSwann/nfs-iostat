@@ -5,8 +5,10 @@ import json
 import requests
 import socket
 import time
+from datetime import datetime
 
-interval = 10
+day_interval = 10
+night_interval = 300
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
 hostname = hostname.replace('.telviva.com', '')
@@ -22,6 +24,11 @@ if '197.155.251' not in ip_address:
 while True:
 
     try:
+        interval = night_interval
+        now = datetime.now()
+        hour = now.hour
+        if hour >= 7 and hour < 18:
+            interval = day_interval
         
         for mount in mounts:
             proc = subprocess.Popen(["nfs-iostat", "jsonstats", mount], stdout=subprocess.PIPE)
