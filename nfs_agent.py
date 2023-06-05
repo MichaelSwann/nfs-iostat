@@ -17,7 +17,7 @@ telviva_42_mounts = ['/var/lib/enswitch', '/var/lib/enswitch_aws/recordings', '/
 telviva_35_mounts = ['/var/lib/enswitch', '/var/lib/enswitch_aws/recordings']
 
 mounts = telviva_42_mounts
-if '197.155.251' not in ip_address:
+if '197.155.251' not in ip_address or '10.155.251' not in ip_address:
     mounts = telviva_35_mounts
 
 
